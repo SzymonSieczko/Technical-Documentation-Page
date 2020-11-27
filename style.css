@@ -59,7 +59,6 @@ html{
     min-width: 35rem;
     max-height: 100vh;
     border-right: solid grey 2px;
-    overflow-y: scroll;
     font-family: 'Roboto', sans-serif;
 }
 #navbar h1{
@@ -67,15 +66,16 @@ html{
     text-align: center;
     padding:2rem 0rem;
     font-weight: 900;
+    border-bottom: solid black 1px;
 }
 
 #navbar ul{
     font-size: 1.8rem;
     font-weight: 300;
-    
+    overflow-y: scroll;
 }
 #navbar li{
-    border-top: solid black 1px;
+    border-bottom: solid black 1px;
 }
  #navbar a{
      padding:1.7rem 0rem 1.7rem 2rem;
@@ -95,7 +95,9 @@ html{
      line-height: 2rem;
      font-size: 1.4rem;
      max-height: 100vh;
+     width: 100%;
      overflow: auto;
+     overflow-x: hidden;
  }
 
  .chapter h1{
@@ -106,7 +108,7 @@ html{
 
  .chapter p{
      font-size: 1.5rem;
-     margin: 2rem 6rem;
+     margin: 2rem 6rem 2rem 6rem;
  }
 
  .chapter ul{
@@ -123,12 +125,50 @@ html{
      display: flex;
      align-items: center;
      text-align: left;
-     white-space: pre;
+     white-space: normal;
      word-wrap: normal;
      word-break: normal;
      background-color: rgb(228, 228, 228);
-     margin:1.5rem 6rem 1.5rem 0rem;
+     margin:1.5rem 0rem 1.5rem 0rem;
      border-radius:5px;
      min-height: 5rem;
+     width: 100%;
+     padding-left: 3rem;
 
  }
+
+ @media (max-width: 900px)
+{
+    #page-wraper{
+        display:flex;
+        flex-direction:column;
+    }
+    #navbar{
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 100vw;
+        height: 50vh;
+        border-right: solid grey 2px;
+        overflow-y: scroll;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #navbar ul{
+        border: solid 3px grey;
+    } 
+
+    main{
+        font-family: 'Roboto', sans-serif;
+        line-height: 2rem;
+        font-size: 1.4rem;
+        height: 100%;
+        overflow: visible;
+    }
+    code{
+        white-space: normal;
+        
+    }
+   
+
+}
